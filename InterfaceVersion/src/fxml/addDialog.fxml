@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.web.HTMLEditor?>
+<?import javafx.scene.control.TextField?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+
+<AnchorPane  styleClass="new_Dialog" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addController">
+   <children>
+      <TextField fx:id="tf1" layoutX="120.0" layoutY="95.0" prefHeight="26.0" prefWidth="573.0" />
+      <Label layoutX="50.0" layoutY="100.0" text="Word" />
+      <Label layoutX="50.0" layoutY="150.0" text="Explain" />
+      <HBox layoutX="120.0" layoutY="440.0" prefHeight="100.0" prefWidth="200.0" styleClass="hover_border" stylesheets="@/style/style.css">
+         <children>
+            <Button fx:id="addWordd" mnemonicParsing="false" onMouseClicked="#addWord" prefHeight="34.0" prefWidth="100.0" text="Submit" styleClass="butt">
+            </Button>
+         </children>
+      </HBox>
+      <HTMLEditor fx:id="ta" layoutX="120.0" layoutY="145.0" prefHeight="270.0" prefWidth="573.0" />
+       <Button layoutX="655.0" layoutY="25.0" fx:id="exit" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#close">
+           <graphic>
+               <FontAwesomeIconView glyphName="TIMES" style="-fx-font-family: FontAwesome; -fx-font-size: 25px; -fx-fill: #d1d1d1;"/>
+           </graphic>
+        </Button>
+   </children>
+    <padding>
+        <Insets left="30.0" right="30.0" />
+    </padding>
+</AnchorPane>

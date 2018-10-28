@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+
+<AnchorPane fx:id="apane" prefHeight="200.0" prefWidth="683.0" style="-fx-background-color: white;" stylesheets="@/style/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <VBox prefHeight="66.0" prefWidth="775.0" layoutX="30.0">
+         <children>
+            <AnchorPane>
+               <children>
+                  <AnchorPane fx:id="search_bar"  layoutY="4.0"  prefHeight="34.0" prefWidth="775.0">
+                     <children>
+                        <FontAwesomeIconView fx:id="search_icon" layoutX="745.0" layoutY="24.0" onMouseClicked="#searchWord"  glyphName="SEARCH"  style="-fx-font-size: 20px"/>
+                        <TextField fx:id="search" layoutX="8.0" layoutY="0.0" onMouseClicked="#searchWord" prefHeight="34.0" prefWidth="730.0" promptText="Search" style="-fx-background-color: none;" />
+                     </children>
+                  </AnchorPane>
+                  <HBox alignment="TOP_RIGHT" layoutY="50.0" prefHeight="50.0" prefWidth="770.0" styleClass="hover_border" spacing="12.0" stylesheets="@/style/style.css">
+                     <children>
+                        <Button  mnemonicParsing="false" onMouseClicked="#speak" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton" >
+                           <graphic>
+                              <FontAwesomeIconView glyphName="VOLUME_UP" fx:id="speaker" style="-fx-font-size: 25px"/>
+                           </graphic>
+                        </Button>
+                        <Button  mnemonicParsing="false" onMouseClicked="#getOxford" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="GRADUATION_CAP" fx:id="oxford" style="-fx-font-size: 25px"/>
+                           </graphic>
+                        </Button>
+                        <Button  mnemonicParsing="false" onMouseClicked="#setFav" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="STAR" fx:id="favor" style="-fx-font-size: 25px"/>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="dlt"  mnemonicParsing="false" onMouseClicked="#dltWord" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="MINUS" fx:id="delete" style="-fx-font-size: 25px"/>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="add"  mnemonicParsing="false" onMouseClicked="#loadaddingDialog" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="PLUS" fx:id="insert" style="-fx-font-size: 25px"/>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="edit"  mnemonicParsing="false" onMouseClicked="#loadeditingDialog" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="PENCIL" fx:id="change" style="-fx-font-size: 25px"/>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <WebView fx:id="webview1" layoutX="27.0" layoutY="95.0" prefHeight="515.0" prefWidth="770.0" />
+      <ListView fx:id="listview1" visible="false" layoutX="30.0" layoutY="48.0" prefHeight="570.0" prefWidth="780.0" style="-fx-background-color: white;">
+         <styleClass>
+            <String fx:value="list-cell" />
+            <String fx:value="list-view" />
+         </styleClass>
+      </ListView>
+   </children>
+</AnchorPane>

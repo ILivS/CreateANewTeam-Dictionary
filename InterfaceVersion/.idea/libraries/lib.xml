@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/production/InterfaceVersion/lib/jl1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/InterfaceVersion/lib/json-simple-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/InterfaceVersion/lib/sqlite-jdbc-3.23.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

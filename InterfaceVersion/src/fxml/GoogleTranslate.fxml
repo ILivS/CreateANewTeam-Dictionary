@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+
+<?import javafx.scene.layout.VBox?>
+<AnchorPane prefHeight="310.0" prefWidth="317.0" fx:id="google_trans" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GGController">
+   <children>
+      <AnchorPane layoutX="35.0" layoutY="10.0">
+         <children>
+            <ChoiceBox fx:id="cb1" layoutX="0.0" layoutY="0.0" prefHeight="26.0" />
+            <ChoiceBox fx:id="cb2" layoutX="400.0" layoutY="0.0" prefHeight="26.0" />
+            <Button fx:id="change" layoutX="333.0" layoutY="0.0" mnemonicParsing="false" onMouseClicked="#exchange" prefHeight="26.0" prefWidth="42.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="REFRESH" styleClass="google_bonus"/>
+               </graphic>
+            </Button>
+            <TextArea fx:id="textArea" layoutX="0" layoutY="45.0" onMouseClicked="#instantSearch" prefHeight="490.0" prefWidth="372.0" style="-fx-background-color: white; " />
+            <TextArea fx:id="textArea1" layoutX="400.0" layoutY="45.0" prefHeight="490.0" prefWidth="372.0" style="-fx-background-color: white;" />
+            <Button fx:id="gg_speak" layoutX="287.0" layoutY="0" mnemonicParsing="false" onMouseClicked="#speak" prefHeight="26.0" prefWidth="42.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="VOLUME_UP"  styleClass="google_bonus"/>
+               </graphic>
+            </Button>
+            <Button layoutX="0" layoutY="555.0" prefHeight="34.0" prefWidth="100.0" mnemonicParsing="false" onMouseClicked="#translate" text="Translate" styleClass="butt" />
+
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

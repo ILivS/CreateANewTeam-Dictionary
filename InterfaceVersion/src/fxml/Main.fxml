@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+
+
+<BorderPane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720" prefWidth="1080" stylesheets="@/style/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <top>
+        <HBox BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="topleft" alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="60.0" prefWidth="241.0">
+                    <children>
+                        <FontAwesomeIconView glyphName="BOOK" style="-fx-font-family: FontAwesome; -fx-font-size: 36px; -fx-fill: white"/>
+                        <Text fx:id="dictionary" strokeType="OUTSIDE" strokeWidth="0.0"  text="  Dictionary" styleClass="whitetext" ></Text>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="30.0" right="20.0" top="40.0" />
+                    </padding>
+                </HBox>
+                <HBox fx:id="topright" alignment="CENTER_LEFT" minHeight="60.0" prefWidth="712.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox alignment="TOP_RIGHT" stylesheets="@/style/style.css" HBox.hgrow="ALWAYS">
+                            <children>
+                                <FontAwesomeIconView glyphName="USER" style="-fx-font-family: FontAwesome; -fx-font-size: 16px;">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                </FontAwesomeIconView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0"  text="Create a new team">
+                                    <HBox.margin>
+                                        <Insets left="5.0" right="24.0" top="10.0"/>
+                                    </HBox.margin>
+                                </Text>
+                                <Button fx:id="exit" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#close">
+                                    <graphic>
+                                        <FontAwesomeIconView glyphName="TIMES" style="-fx-font-family: FontAwesome; -fx-font-size: 25px; -fx-fill: #d1d1d1;"/>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets right="20.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets top="25.0" right="10.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <VBox fx:id="left"  prefHeight="750.0" prefWidth="241.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="580.0"  styleClass="hover_border" stylesheets="@/style/style.css">
+                    <children>
+                        <VBox alignment="TOP_LEFT" prefHeight="650.0" spacing="10.0">
+                            <children>
+                                <HBox fx:id="homepage" alignment="CENTER_LEFT" onMouseClicked="#loadMain" prefHeight="42.0" maxWidth="200.0" styleClass="tag">
+                                    <children>
+                                        <FontAwesomeIconView glyphName="HOME" style="-fx-font-family: FontAwesome; -fx-font-size: 24px; -fx-fill: #039BE5"/>
+                                        <Text style="-fx-fill: #039BE5;" text="Homepage">
+                                            <HBox.margin>
+                                                <Insets left="10.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                                <HBox fx:id="gg" alignment="CENTER_LEFT" prefHeight="42.0" maxWidth="200.0" onMouseClicked="#loadGoogleTranslate" styleClass="left_button">
+                                    <children>
+                                        <FontAwesomeIconView glyphName="GOOGLE" style="-fx-font-family: FontAwesome; -fx-font-size: 24px; -fx-fill: white"/>
+                                        <Text styleClass="whitetext" text="Google Translate">
+                                            <HBox.margin>
+                                                <Insets left="10.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                                <HBox fx:id="fav" alignment="CENTER_LEFT"  prefHeight="42.0" maxWidth="200.0" onMouseClicked="#loadFavorite" styleClass="left_button">
+                                    <children>
+                                        <FontAwesomeIconView glyphName="STAR" style="-fx-font-family: FontAwesome; -fx-font-size: 24px; -fx-fill: white"/>
+                                        <Text styleClass="whitetext" text="Favorite">
+                                            <HBox.margin>
+                                                <Insets left="10.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <HBox alignment="BOTTOM_RIGHT" spacing="5.0">
+                            <children>
+                                <HBox alignment="CENTER" minHeight="42.0" minWidth="42.0" styleClass="left_button" style="-fx-padding: 0px;">
+                                    <children>
+                                        <FontAwesomeIconView glyphName="COG" style="-fx-font-family: FontAwesome; -fx-font-size: 16px; -fx-fill: white"/>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" minHeight="42.0" minWidth="42.0" styleClass="left_button" style="-fx-padding: 0px;">
+                                    <children>
+                                        <FontAwesomeIconView glyphName="INFO" style="-fx-font-family: FontAwesome; -fx-font-size: 16px; -fx-fill: white"/>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </HBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="15.0" top="50.0"/>
+            </padding>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane fx:id="apane" prefHeight="200.0" prefWidth="683.0" style="-fx-background-color: white;" stylesheets="@/style/style.css" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="66.0" prefWidth="775.0" layoutX="30.0">
+                    <children>
+                        <AnchorPane >
+                            <children>
+                                <AnchorPane fx:id="search_bar"  layoutY="4.0"  prefHeight="34.0" prefWidth="775.0">
+                                    <children>
+                                        <FontAwesomeIconView fx:id="search_icon" layoutX="745.0" layoutY="24.0" onMouseClicked="#searchWord"  glyphName="SEARCH"  style="-fx-font-size: 20px"/>
+                                        <TextField fx:id="search" layoutX="8.0" layoutY="0.0" onMouseClicked="#searchWord" prefHeight="34.0" prefWidth="730.0" promptText="Search" style="-fx-background-color: none;" />
+                                    </children>
+                                </AnchorPane>
+                                <HBox alignment="TOP_RIGHT" layoutY="50.0" prefHeight="50.0" prefWidth="770.0" styleClass="hover_border" spacing="12.0" stylesheets="@/style/style.css">
+                                    <children>
+                                        <Button  mnemonicParsing="false" onMouseClicked="#speak" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton" >
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="VOLUME_UP" fx:id="speaker" style="-fx-font-size: 25px"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button  mnemonicParsing="false" onMouseClicked="#getOxford" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="GRADUATION_CAP" fx:id="oxford" style="-fx-font-size: 25px"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button  mnemonicParsing="false" onMouseClicked="#setFav" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="STAR" fx:id="favor" style="-fx-font-size: 25px"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="dlt"  mnemonicParsing="false" onMouseClicked="#dltWord" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="MINUS" fx:id="delete" style="-fx-font-size: 25px"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="add"  mnemonicParsing="false" onMouseClicked="#loadaddingDialog" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PLUS" fx:id="insert" style="-fx-font-size: 25px"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="edit"  mnemonicParsing="false" onMouseClicked="#loadeditingDialog" prefHeight="40.0" prefWidth="40.0" styleClass="mainButton">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PENCIL" fx:id="change" style="-fx-font-size: 25px"/>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </VBox>
+                <WebView fx:id="webview1" layoutX="27.0" layoutY="95.0" prefHeight="515.0" prefWidth="770.0" />
+                <ListView fx:id="listview1" visible="false" layoutX="30.0" layoutY="48.0" prefHeight="570.0" prefWidth="780.0" style="-fx-background-color: white;">
+                    <styleClass>
+                        <String fx:value="list-cell" />
+                        <String fx:value="list-view" />
+                    </styleClass>
+                </ListView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
